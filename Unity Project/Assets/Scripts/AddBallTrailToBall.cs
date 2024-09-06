@@ -8,7 +8,14 @@ public class AddBallTrailToBall : MonoBehaviour
 
     private void Start()
     {
-        ball = FindFirstObjectByType<BallMovement>().gameObject;
-        ball.AddComponent<BallTrail>();
+        if (FindFirstObjectByType<BallMovement>().gameObject)
+        {
+            ball = FindFirstObjectByType<BallMovement>().gameObject;
+            ball.AddComponent<BallTrail>();
+        }
+        else
+        {
+            return;
+        }
     }
 }
