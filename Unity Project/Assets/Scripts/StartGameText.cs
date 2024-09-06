@@ -2,6 +2,7 @@
 
 public class StartGameText : MonoBehaviour
 {
+    // Dit is één comment
     BallMovement ballMovement;
     [SerializeField] GameObject playText;
     void Start()
