@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     // Declares the audio clips
     AudioClip bound;
     AudioClip win;
+    AudioClip pongMusic;
 
     // Declares the random pitch value
     float randomPitch = 1;
@@ -28,6 +29,11 @@ public class AudioManager : MonoBehaviour
         // Loads the audio clips
         bound = Resources.Load<AudioClip>("Audio/Bound");
         win = Resources.Load<AudioClip>("Audio/Score");
+        pongMusic = Resources.Load<AudioClip>("Audio/Music");
+
+        music.loop = true;
+        music.clip = pongMusic;
+        music.Play();
     }
 
     // Update is called once per frame
@@ -39,8 +45,13 @@ public class AudioManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Sets the pitch to the random pitch value
         sfx.pitch = randomPitch;
+
+        // Sets the sound effects clip to the bound sound
         sfx.clip = bound;
+
+        // Plays the sound
         sfx.Play();
     }
 
