@@ -32,8 +32,5 @@ public class WinEffect : MonoBehaviour
 
         mainModule.stopAction = ParticleSystemStopAction.Destroy;
         mainModule.loop = false;
-        
-        
-
     }
 }
